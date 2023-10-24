@@ -1,10 +1,5 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "capslock",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
-    },
     // NAVIGATION
     {
         "key": "ctrl+shift+a",
@@ -29,6 +24,16 @@
         "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "terminal.focus",
+        "when": "!terminal.focus"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus" 
     },
     // FILE TREE
     {
@@ -56,11 +61,6 @@
         "when": "explorerViewletFocus"
     },
     {
-        "key": "shift+n",
-        "command": "workbench.action.newWindow",
-        "when": "!explorerViewletFocus"
-    },
-    {
         "command": "deleteFile",
         "key": "d",
         "when": "filesExplorerFocus && !inputFocus"
@@ -72,6 +72,10 @@
     },
     {
         "key": "ctrl+z",
-        "command": "workbench.action.toggleZenMode"
+        "command": "undo" 
+    },
+    {
+        "key": "ctrl+r",
+        "command": "redo"
     }
 ]
