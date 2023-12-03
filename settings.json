@@ -1,16 +1,20 @@
 {
   // Misc
+  "dotnet.server.useOmnisharp": true,
+  "debug.toolBarLocation": "commandCenter",
+  "extensions.ignoreRecommendations": true,
   "telemetry.telemetryLevel": "off",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "vsicons.dontShowNewVersionMessage": true,
-  "extensions.ignoreRecommendations": true,
-  "dotnet.server.useOmnisharp": true,
   "window.commandCenter": true,
   "explorer.decorations.badges": false,
   "explorer.confirmDelete": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "cSpell.userWords": ["autopay", "tylertech"],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   },
 
   // Editor
@@ -20,13 +24,18 @@
   "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
   "editor.tokenColorCustomizations": {
-    "[Community Material Theme Palenight High Contrast]": {
+    "[Material Theme Palenight High Contrast]": {
       "textMateRules": [
         {
-          "scope": ["variable.other.object.cs", "variable.other.property.cs"],
+          "scope": [
+            "variable.other.object.cs",
+            "variable.other.property.cs",
+            "variable.other.object.ts",
+            "variable.other.property.ts"
+          ],
           "settings": {
             "fontStyle": "italic",
-            "foreground": "#e68911"
+            "foreground": "#e65411"
           }
         },
         {
@@ -48,14 +57,21 @@
       "parameter.declaration.cs": {
         "fontStyle": "italic",
         "foreground": "#FF0000"
-      }
+      },
+      "variable": "#e68911"
     }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // Workbench
   "workbench.editor.empty.hint": "hidden",
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+  "workbench.iconTheme": "icons",
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  "workbench.editor.showTabs": "single",
   "workbench.colorCustomizations": {
     "debugConsole.infoForeground": "#5eade2",
     "debugConsole.errorForeground": "#FF0000",

@@ -35,6 +35,7 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus" 
     },
+   
     // FILE TREE
     {
         "command": "workbench.action.toggleSidebarVisibility",
@@ -77,5 +78,46 @@
     {
         "key": "ctrl+r",
         "command": "redo"
+    },
+    {
+        "key": "ctrl+clear ctrl+shift",
+        "command": "extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command":"workbench.action.closeActiveEditor",
+        "when": "editorTextFocus && vim.active"
+    },
+    {
+        // close the active editor group on ctrl shift w
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeActiveEditor",
+        "when": "editorTextFocus && vim.active"        
     }
 ]
