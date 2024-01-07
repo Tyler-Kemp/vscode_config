@@ -22,7 +22,8 @@
   "editor.fontFamily": "Operator Mono",
   "editor.lineHeight": 24,
   "editor.fontLigatures": true,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
+  "editor.stickyScroll.scrollWithEditor": false,
   "editor.tokenColorCustomizations": {
     "[Material Theme Palenight High Contrast]": {
       "textMateRules": [
@@ -108,9 +109,17 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
     // NICE TO HAVE
-    { "before": ["leader", "w"], "commands": [":w!"] },
     { "before": ["leader", "q"], "commands": [":q!"] },
     { "before": ["leader", "x"], "commands": [":x!"] },
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    {
+      "before": ["leader", "D"],
+      "commands": ["editor.action.goToDeclaration"]
+    },
+    {
+      "before": ["leader", "I"],
+      "commands": ["editor.action.goToImplementation"]
+    },
     {
       "before": ["[", "d"],
       "commands": ["editor.action.marker.prev"]
@@ -128,6 +137,39 @@
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["<C-d>"], "commands": [
+        {
+          "command": "editorScroll", "args": {
+          "to": "down",
+          "by": "halfPage",
+        }},
+        {
+          "command": "cursorMove",
+          "args": { 
+            "to": "viewPortCenter"
+          }
+        }]
+    },
+    {
+      "before": ["<C-u>"], "commands": [
+        {
+          "command": "editorScroll", "args": {
+          "to": "up",
+          "by": "halfPage",
+        }},
+        {
+          "command": "cursorMove",
+          "args": { 
+            "to": "viewPortCenter"
+          }
+        }]
+    },
+    {
+      // close all open editors
+      "before": ["leader", "Q"],
+      "commands": ["workbench.action.closeAllEditors"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -139,5 +181,8 @@
     { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
     // toggle comment selection
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-  ]
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

@@ -2,7 +2,7 @@
 [
     // NAVIGATION
     {
-        "key": "ctrl+shift+a",
+        "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus"
     },
@@ -21,11 +21,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+w",
-        "command": "workbench.action.terminal.kill",
-        "when": "terminalFocus"
-    },
-    {
         "key": "ctrl+shift+a",
         "command": "terminal.focus",
         "when": "!terminal.focus"
@@ -38,13 +33,8 @@
    
     // FILE TREE
     {
-        "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+e"
-    },
-    {
-        "command": "workbench.files.action.focusFilesExplorer",
         "key": "ctrl+e",
-        "when": "editorTextFocus"
+        "command": "workbench.action.toggleSidebarVisibility",
     },
     {
         "key": "n",
@@ -52,8 +42,8 @@
         "when": "filesExplorerFocus && !inputFocus"
     },
     {
-        "command": "renameFile",
         "key": "r",
+        "command": "renameFile",
         "when": "filesExplorerFocus && !inputFocus"
     },
     {
@@ -62,33 +52,11 @@
         "when": "explorerViewletFocus"
     },
     {
-        "command": "deleteFile",
         "key": "d",
+        "command": "deleteFile",
         "when": "filesExplorerFocus && !inputFocus"
     },
     // EXTRA
-    {
-        "key": "ctrl+shift+5",
-        "command": "editor.emmet.action.matchTag"
-    },
-    {
-        "key": "ctrl+z",
-        "command": "undo" 
-    },
-    {
-        "key": "ctrl+r",
-        "command": "redo"
-    },
-    {
-        "key": "ctrl+clear ctrl+shift",
-        "command": "extension.vim_ctrl+p",
-        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "-extension.vim_ctrl+p",
-        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
-    },
     {
         "key": "ctrl+shift+b",
         "command": "-workbench.action.tasks.build",
@@ -100,24 +68,16 @@
         "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
     },
     {
-        "key": "ctrl+w",
-        "command": "-extension.vim_ctrl+w",
-        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
-    },
-    {
-        "key": "ctrl+w",
-        "command": "-workbench.action.closeGroup",
-        "when": "activeEditorGroupEmpty && multipleEditorGroups"
-    },
-    {
         "key": "ctrl+shift+w",
-        "command":"workbench.action.closeActiveEditor",
-        "when": "editorTextFocus && vim.active"
+        "command": "-workbench.action.closeWindow"
     },
     {
-        // close the active editor group on ctrl shift w
-        "key": "ctrl+shift+w",
-        "command": "-workbench.action.closeActiveEditor",
-        "when": "editorTextFocus && vim.active"        
-    }
+        "key": "ctrl+k ctrl+shift+w",
+        "command": "-workbench.action.closeAllGroups"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
 ]
