@@ -23,62 +23,18 @@
   "editor.lineHeight": 24,
   "editor.fontLigatures": true,
   "editor.lineNumbers": "relative",
-  "editor.stickyScroll.scrollWithEditor": false,
-  "editor.tokenColorCustomizations": {
-    "[Material Theme Palenight High Contrast]": {
-      "textMateRules": [
-        {
-          "scope": [
-            "variable.other.object.cs",
-            "variable.other.property.cs",
-            "variable.other.object.ts",
-            "variable.other.property.ts"
-          ],
-          "settings": {
-            "fontStyle": "italic",
-            "foreground": "#e65411"
-          }
-        },
-        {
-          "scope": [
-            "meta.method-call.cs variable.language.cs",
-            "meta.method-call.cs variable.parameter.cs"
-          ],
-          "settings": {
-            "fontStyle": "",
-            "foreground": "#5eade2"
-          }
-        }
-      ]
-    }
-  },
-  "editor.semanticTokenColorCustomizations": {
-    "enabled": true,
-    "rules": {
-      "parameter.declaration.cs": {
-        "fontStyle": "italic",
-        "foreground": "#FF0000"
-      },
-      "variable": "#e68911"
-    }
-  },
+  "editor.stickyScroll.scrollWithEditor": false, 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // Workbench
   "workbench.editor.empty.hint": "hidden",
-  "workbench.iconTheme": "icons",
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  "workbench.colorTheme": "Palenight (Mild Contrast)",
   "workbench.editor.showTabs": "single",
-  "workbench.colorCustomizations": {
-    "debugConsole.infoForeground": "#5eade2",
-    "debugConsole.errorForeground": "#FF0000",
-    "debugConsole.warningForeground": "#e68911",
-    "debugConsole.sourceForeground": "#a740bb"
-  },
+ 
 
   // VIM Motions
   "vim.leader": "<Space>",
@@ -139,32 +95,40 @@
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
-      "before": ["<C-d>"], "commands": [
+      "before": ["<C-j>"],
+      "commands": [
         {
-          "command": "editorScroll", "args": {
-          "to": "down",
-          "by": "halfPage",
-        }},
+          "command": "editorScroll",
+          "args": {
+            "to": "down",
+            "by": "halfPage"
+          }
+        },
         {
           "command": "cursorMove",
-          "args": { 
+          "args": {
             "to": "viewPortCenter"
           }
-        }]
+        }
+      ]
     },
     {
-      "before": ["<C-u>"], "commands": [
+      "before": ["<C-k>"],
+      "commands": [
         {
-          "command": "editorScroll", "args": {
-          "to": "up",
-          "by": "halfPage",
-        }},
+          "command": "editorScroll",
+          "args": {
+            "to": "up",
+            "by": "halfPage"
+          }
+        },
         {
           "command": "cursorMove",
-          "args": { 
+          "args": {
             "to": "viewPortCenter"
           }
-        }]
+        }
+      ]
     },
     {
       // close all open editors
@@ -185,4 +149,5 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "workbench.iconTheme": "vscode-icons"
 }
